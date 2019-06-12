@@ -1,8 +1,10 @@
 import React, { Component } from "react";
+import {connect} from 'react-redux';
 
 class CharacterList extends Component {
 
   render() {
+    console.log(this.props)
     return (
       <div
         style={{
@@ -26,4 +28,9 @@ class CharacterList extends Component {
     );
   }
 }
-export default CharacterList;
+
+const mapStateToProps = reduxState => {
+  return reduxState;
+}
+
+export default connect(mapStateToProps)(CharacterList);
